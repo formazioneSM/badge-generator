@@ -1,6 +1,11 @@
+<div id="select">
+  <select name="select" (change)="switchCompany($event)">
+    <option *ngFor="let l of dropdownOptions" [value]="l.name">{{l.name}}</option>
+  </select>
+</div>
 <div #content id="badgeContainer" >
   <div id="containerLogo" [style.background]="companyConfiguration.background">
-    <img [src]="imgCompany" alt="logo_system">
+    <img [src]="imgCompany" [ngStyle]="companyConfiguration.imgStyles" alt="logo_system">
   </div>
   <div id="imageAndQr" >
     <input #inputImage type="file" accept="image/*" (change)="showPreview($event)" />
@@ -19,4 +24,3 @@
 </div>
 
 <button [disabled]="name.length == 0 || surname.length == 0 || imageURL.length == 0 || id.length == 0" (click)="onConfirm()">scarica pdf</button>
-<button (click)="secureware()">Cambia in secureware</button>

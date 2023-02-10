@@ -1,7 +1,7 @@
 import { Component, ElementRef, inject, NgZone, ViewChild } from '@angular/core';
 import html2canvas from 'html2canvas';
 import { jsPDF } from "jspdf";
-import { system, secureware } from 'src/constants/companySettings';
+import { system, secureware, companies } from 'src/constants/companySettings';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +13,8 @@ export class AppComponent {
   surname:string = '';
   id:string = '';
   ngZone = inject(NgZone);
+  companies = companies;
+  dropdownOptions=Object.values(companies);
   companyConfiguration = system;
   imgCompany = `../assets/images/${this.companyConfiguration.img}.svg`;
   title = 'badge-generator';
@@ -22,8 +24,11 @@ export class AppComponent {
   onConfirm() {
     this.exportAllToPDF(this.content?.nativeElement);
 }
-secureware(){
-    this.companyConfiguration = secureware;
+
+
+switchCompany(event:any){
+    let name = event.target.value;
+    this.companyConfiguration = companies[name];
     this.imgCompany = `../assets/images/${this.companyConfiguration.img}.svg`;
 }
   exportAllToPDF(page:any) {
