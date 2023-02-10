@@ -1,0 +1,106 @@
+:host{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #ededed; 
+    button{
+        &:disabled{
+            opacity: .3;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+        width: 207.87401575px;
+        margin: 20px auto auto auto;
+        background: var(--system);
+        color: white;
+        border: none;
+        border-radius: 30px;
+        padding: 20px;
+        box-sizing: border-box;
+        cursor: pointer;
+    }
+    #badgeContainer{
+    background: white;
+    width: 207.87401575px;
+    height: 321.25984252px;
+    display: flex;
+    flex-direction: column;
+    margin: auto auto 20px auto;
+   
+    #containerLogo{
+        // background: var(--system);
+        height: 103.93700787px;
+        width: auto;
+        margin: 5.6692913386px;
+        padding: 11.338582677px;
+        box-sizing: border-box;
+        border-radius: 10px;
+        img{
+            width: 137.57480315px;
+        }
+    }
+    #imageAndQr{
+        display: flex;
+        align-items: center;
+        input{
+            visibility: hidden;
+            position: absolute;
+            pointer-events: none;
+        }
+        #image{
+            margin: 9px auto auto 12px;
+            cursor: pointer;
+            // border: 1px solid black;
+            width: 102.04724409px;
+            height: 102.04724409px;
+            border-radius: 10000px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img{
+                height: 100%;
+                flex: 1;
+            }
+        }
+        #qr{
+            margin: auto 12px auto auto;
+            width: 60px;
+            height: 60px;
+            img{
+                width: 100%;
+            }
+        }
+
+    }
+    #info{
+        margin-left: 12px;
+        margin-top: 5px;
+        display: flex;
+        flex-direction: column;
+        input{
+            &::placeholder{
+                color: var(--primary);
+                opacity: .3;
+            }
+            border: none;
+            color: var(--primary);
+            outline: none;
+        }
+        #name{
+            font-family: gotham-bold;
+            font-size: 14pt;
+        }
+        #surname{
+            font-size: 14pt;
+            margin-top: -5px;
+        }
+        #id{
+            font-size: 10pt;
+            margin-top: 10px;
+        }
+    }
+}
+}
+

@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~normalize.css/normalize.css';
+
+:root {
+    --system: #003594;
+}
+body, html{
+    display: flex;
+    font-family: gotham-light;
+}
+@font-face {
+    font-family: gotham-light;
+    src: url(./assets/fonts/GothamLight.ttf);
+}
+@font-face {
+    font-family: gotham-bold;
+    src: url(./assets/fonts/GothamBold.ttf);
+}
