@@ -2,17 +2,17 @@ import { Company } from "src/interfaces/company.interface"
 
 export const system:Company = {
     name: 'system',
-    background: '#003594',
-    textColor:'#003594',
+    background: '#1B5FAA',
+    textColor:'#1B5FAA',
     img: 'Logo_System',
-    imgStyles: {width: '137.57480315px', background:'#003594'}
+    imgStyles: {width: '137.57480315px', background:'#1B5FAA'}
 }
 export const databooz:Company = {
     name: 'databooz',
-    background: '#E8E8E8',
-    textColor: '#253B6E',
+    background: '#1B5FAA',
+    textColor: '#1B5FAA',
     img: 'Logo_Databooz',
-    imgStyles: { width: '137.57480315px',background:'transparent', margin: 'auto'}
+    imgStyles: { width: '137.57480315px',background:'#1B5FAA', margin: 'auto'}
 }
 export const secureware:Company = {
     name: 'secureware',

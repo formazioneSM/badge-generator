@@ -35,7 +35,7 @@ switchCompany(event:any){
     var w = page.offsetWidth;
     var h = page.offsetHeight;
     const doc =  new jsPDF('p', 'pt', [w, h]);
-    html2canvas(page, {scale: 1.4}).then((canvas:any) => {
+    html2canvas(page, {scale: 1.3}).then((canvas:any) => {
       var img = canvas.toDataURL("image/jpeg", 1);
       doc.addImage(img, 'JPEG', 0, 0, w, h);
       doc.save(`${this.name}-${this.surname}.pdf`);
