@@ -16,7 +16,7 @@ export class AppComponent {
   companies = companies;
   dropdownOptions=Object.values(companies);
   companyConfiguration = system;
-  imgCompany = `../assets/images/${this.companyConfiguration.img}.svg`;
+  imgCompany = `../assets/images/${this.companyConfiguration.img}.png`;
   title = 'badge-generator';
   imageURL:string = '';
   @ViewChild('content') content: ElementRef | undefined = undefined;
@@ -34,10 +34,12 @@ switchCompany(event:any){
   exportAllToPDF(page:any) {
     var w = page.offsetWidth;
     var h = page.offsetHeight;
-    const doc =  new jsPDF('p', 'pt', [w, h]);
-    html2canvas(page, {scale: 1.3}).then((canvas:any) => {
-      var img = canvas.toDataURL("image/jpeg", 1);
-      doc.addImage(img, 'JPEG', 0, 0, w, h);
+    html2canvas(page, {scrollY: -window.scrollY, scale: 3}).then((canvas:any) => {
+      const doc =  new jsPDF('p', 'pt', [w, h]);
+      var img = canvas.toDataURL("image/jpeg");
+      var width = doc.internal.pageSize.getWidth();
+    var height = doc.internal.pageSize.getHeight();
+      doc.addImage(img, 'JPEG', 0, 0, width, height);
       doc.save(`${this.name}-${this.surname}.pdf`);
     })  ;
   }
