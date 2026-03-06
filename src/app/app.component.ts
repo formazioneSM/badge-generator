@@ -1,7 +1,7 @@
 import { Component, ElementRef, inject, NgZone, ViewChild } from '@angular/core';
 import html2canvas from 'html2canvas';
 import { jsPDF } from "jspdf";
-import { system, secureware, companies } from 'src/constants/companySettings';
+import { companies, system } from 'src/constants/companySettings';
 
 @Component({
   selector: 'app-root',
@@ -27,9 +27,9 @@ export class AppComponent {
 
 
 switchCompany(event:any){
-    let name = event.target.value;
+    let name = event.target.value.replaceAll(' ','').toLowerCase();
     this.companyConfiguration = companies[name];
-    this.imgCompany = `../assets/images/${this.companyConfiguration.img}.svg`;
+    this.imgCompany = `../assets/images/${this.companyConfiguration.img}.png`;
 }
   exportAllToPDF(page:any) {
     var w = page.offsetWidth;

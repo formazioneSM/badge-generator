@@ -7,6 +7,13 @@ export const system:Company = {
     img: 'Logo_System',
     imgStyles: {width: '137.57480315px', background:'#1B5FAA'}
 }
+export const digitalplatforms:Company = {
+    name: 'Digital Platforms',
+    background: '#005fb5',
+    textColor:'#005fb5',
+    img: 'Logo_DigitalPlatforms',
+    imgStyles: {width: '137.57480315px',margin: 'auto'}
+}
 export const databooz:Company = {
     name: 'databooz',
     background: '#1B5FAA',
@@ -24,5 +31,6 @@ export const secureware:Company = {
 export const companies:{[key:string] : any} = {
     system,
     secureware,
-    databooz
+    databooz,
+    digitalplatforms
 }
