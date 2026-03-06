@@ -25,3 +25,10 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+## Come fare il rilascio
+utilizzare node 20>, installare firebase-tools globalmente
+buildare l'app con ng build
+utilizzare questo comando per deployare:
+```npx firebase-tools deploy --only hosting```
